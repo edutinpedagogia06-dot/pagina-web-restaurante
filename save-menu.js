@@ -19,7 +19,10 @@ module.exports = async (req, res) => {
   }
 
   const { password, menu, githubToken } = req.body || {};
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+  // Contraseña por defecto puesta directamente en el código (no depende de Vercel).
+  // Si más adelante configuras ADMIN_PASSWORD en Vercel, esa tiene prioridad.
+  const HARDCODED_PASSWORD = 'campestre2024';
+  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || HARDCODED_PASSWORD;
   const GITHUB_TOKEN = githubToken || process.env.GITHUB_TOKEN;
   const GITHUB_OWNER = process.env.GITHUB_OWNER;
   const GITHUB_REPO = process.env.GITHUB_REPO;

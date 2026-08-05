@@ -10,13 +10,10 @@ module.exports = async (req, res) => {
   }
 
   const { password } = req.body || {};
-  const realPassword = process.env.ADMIN_PASSWORD;
-
-  if (!realPassword) {
-    res.status(500).json({ error: 'ADMIN_PASSWORD no está configurada en Vercel.' });
-    return;
-  }
-
+  // Contraseña por defecto puesta directamente en el código (no depende de Vercel).
+  // Si más adelante configuras ADMIN_PASSWORD en Vercel, esa tiene prioridad.
+  const HARDCODED_PASSWORD = 'campestre2024';
+  const realPassword = process.env.ADMIN_PASSWORD || HARDCODED_PASSWORD;
   if (password === realPassword) {
     res.status(200).json({ ok: true });
   } else {
