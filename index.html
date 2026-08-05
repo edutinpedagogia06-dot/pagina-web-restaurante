@@ -763,7 +763,7 @@ document.getElementById('logoTrigger').addEventListener('click', ()=>{
 });
 
 async function checkPassword(){
-  const entered = document.getElementById('pwInput').value;
+  const entered = document.getElementById('pwInput').value.trim();
   const pwMsg = document.getElementById('pwMsg');
   pwMsg.style.display='none';
   try{
