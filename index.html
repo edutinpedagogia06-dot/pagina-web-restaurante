@@ -479,6 +479,12 @@
     <div class="modal-title">Panel <span class="accent">Administrador</span></div>
     <div class="save-status" id="saveStatus"><span class="dot"></span><span id="saveStatusText">Los cambios se guardan en GitHub y el sitio se actualiza solo en 30-60 seg.</span></div>
 
+    <div style="background:var(--bg-card-2); border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:18px;">
+      <label style="margin-top:0;">Token de GitHub (opcional en este cambio)</label>
+      <input type="password" id="githubTokenInput" placeholder="Pégalo aquí solo si quieres usar tu propio token para este cambio">
+      <p style="color:var(--muted); font-size:0.75rem; margin-top:6px;">Si lo dejas vacío, se usa el token guardado en Vercel como respaldo. Este campo no se guarda en ningún lado, solo se usa en el momento de guardar.</p>
+    </div>
+
     <div class="tab-row">
       <button class="active" id="tabAdd" onclick="switchAdminTab('add')">➕ Agregar plato</button>
       <button id="tabManage" onclick="switchAdminTab('manage')">📋 Gestionar menú</button>
@@ -571,11 +577,13 @@ async function loadMenu(){
 
 async function saveMenu(){
   showSaveStatus('saving');
+  const tokenField = document.getElementById('githubTokenInput');
+  const ownerToken = tokenField ? tokenField.value.trim() : '';
   try{
     const resp = await fetch('/api/save-menu', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ password: adminPasswordCache, menu: MENU })
+      body: JSON.stringify({ password: adminPasswordCache, menu: MENU, githubToken: ownerToken || undefined })
     });
     const data = await resp.json();
     if(!resp.ok) throw new Error(data.error || 'Error al guardar');

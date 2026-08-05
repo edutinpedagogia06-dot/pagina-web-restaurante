@@ -1,0 +1,10 @@
+[
+  {"id":"d1","cat":"Sopas","name":"Sancocho de Gallina","desc":"Sancocho tradicional con gallina criolla, yuca, plátano y mazorca.","price":22000,"image":null},
+  {"id":"d2","cat":"Sopas","name":"Sopa de Guineo","desc":"Sopa suave de plátano verde con costilla de cerdo.","price":15000,"image":null},
+  {"id":"d3","cat":"Platos Fuertes","name":"Bandeja Campestre","desc":"Carne asada, arroz, frijoles, ensalada fresca y patacón.","price":25000,"image":null},
+  {"id":"d4","cat":"Platos Fuertes","name":"Pechuga a la Plancha","desc":"Pechuga de pollo a la plancha con arroz, ensalada y tajadas.","price":20000,"image":null},
+  {"id":"d5","cat":"Platos Fuertes","name":"Pescado Frito","desc":"Pescado frito entero con coco, patacón y ensalada.","price":28000,"image":null},
+  {"id":"d6","cat":"Bebidas","name":"Limonada de Coco","desc":"Limonada cremosa de coco, bien fría.","price":8000,"image":null},
+  {"id":"d7","cat":"Bebidas","name":"Jugo Natural","desc":"Jugo natural de la fruta del día.","price":6000,"image":null},
+  {"id":"d8","cat":"Postres","name":"Arroz con Leche","desc":"Postre casero de arroz con leche y canela.","price":6000,"image":null}
+]

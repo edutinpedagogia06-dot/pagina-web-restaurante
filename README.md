@@ -6,10 +6,17 @@ que corre en el servidor (nunca en el navegador del visitante).
 
 ## ⚠️ Importante sobre el token de GitHub
 
-**Nunca pongas tu token de GitHub en el código ni lo compartas por chat.**
-Va en las variables de entorno de Vercel, un lugar hecho para guardar secretos
-que ningún visitante de la página puede ver, ni siquiera revisando el código
-fuente.
+Este proyecto quedó armado con el modo que pediste: **la dueña pega su token
+de GitHub directamente en el panel admin, en el momento de guardar un
+cambio.** Si lo deja vacío, el sistema usa como respaldo el token guardado en
+las variables de entorno de Vercel.
+
+Quiero dejar constancia de una cosa técnica, para que la decisión sea
+informada: escribir el token en un campo del navegador significa que ese
+token viaja por el navegador en ese momento, lo cual es menos seguro que
+tenerlo únicamente guardado en Vercel y nunca escribirlo en ningún campo. Es
+tu token y tu decisión — el sistema ya quedó construido así, con el respaldo
+en Vercel como red de seguridad por si el campo queda vacío.
 
 ## Paso 1 — Sube este proyecto a un repositorio de GitHub
 
